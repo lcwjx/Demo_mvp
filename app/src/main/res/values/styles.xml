@@ -8,4 +8,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--在Android 4.4之前的版本上运行，直接跟随系统主题-->
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+    <!--全屏主题-->
+    <style name="ThemeAppLauncher" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@mipmap/launcher</item>
+    </style>
+
+    <style name="Anim_fade" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/PageAnimation</item>
+    </style>
+
+    <style name="PageAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_right</item>
+
+    </style>
+
 </resources>
