@@ -1,8 +1,11 @@
 package com.app.lee.view;
 
+import android.view.View;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.app.lee.R;
+import com.app.lee.aop.CheckLogin;
 import com.app.lee.base.BaseActivity;
 import com.app.lee.base.Constants;
 import com.app.lee.base.RoutePath;
@@ -40,15 +43,22 @@ public class MainActivity extends BaseActivity<MainPresenter, ActivityMainBindin
                 }
         );
         mViewBinding.browserDef.setOnClickListener(view -> {
-                    ARouter.getInstance()
-                            .build(RoutePath.BROWSERACTIVITY)
-                            .withString("url", "http://mc.vip.qq.com/demo/indexv3")
-                            .withInt("mode", Constants.MODE_DEFAULT)
-                            .navigation(this);
-                    LogUtils.e("browserDef-start");
+//                    ARouter.getInstance()
+//                            .build(RoutePath.BROWSERACTIVITY)
+//                            .withString("url", "http://mc.vip.qq.com/demo/indexv3")
+//                            .withInt("mode", Constants.MODE_DEFAULT)
+//                            .navigation(this);
+//                    LogUtils.e("browserDef-start");
+                    test(view);
                 }
         );
     }
+
+    @CheckLogin
+    public void test(View view) {
+        LogUtils.e("Hello, I am CSDN_LQR");
+    }
+
 
     @Override
     public void showData(String s) {
